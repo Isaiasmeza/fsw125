@@ -1,38 +1,39 @@
 const express = require("express")
-const { v4: uuid } = require("uuid")
 const bountyRouter = express.Router()
+const { v4: uuid } = require('uuid')
 
-const bounty = [
+const bounties = [
     {
-        firstName: "Rick",
-        lastName: "gunslinger",
-        living: true,
-        bounty: 500,
+        firstName: "Ricky (The Slasher)",
+        lastName: "Cardoves",
+        wanted: "Dead Or Alive",
+        reward: "500",
         _id: uuid()
     },
     {
-        firstName: "Jose",
-        lastName: "Dart master",
-        living: true,
-        bounty: 5000,
+        firstName: "Danny (The Ghost)",
+        lastName: "Phantom",
+        wanted: "Dead",
+        reward: "5000",
         _id: uuid()
     },
     {
-        firstName: "Mike",
-        lastName: "slasher",
-        living: true,
-        bounty: 50000,
+        firstName: "Tom (The Reaper)",
+        lastName: "Valentine",
+        wanted: "Dead Or Alive",
+        reward: "50000",
         _id: uuid()
     }
 ]
+
 bountyRouter.get("/", (req, res) => {
-    res.send(bounty)
+    res.send(bounties)
 })
 
 bountyRouter.post("/", (req, res) => {
-    const bounties = req.body
-    bounty._id == uuid()
-    bounty.push(bounty)
-    res.send(`Bounty ${bounties.firstName} ${bounties.lastName} added!`)
+    const bounty = req.body;
+    bounty._id = uuid();
+    bounties.push(bounty)
+    res.send(`Bounty: ${bounty.firstName} ${bounty.lastName} added!`)
 })
 module.exports = bountyRouter
