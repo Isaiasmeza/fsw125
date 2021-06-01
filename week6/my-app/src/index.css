@@ -1,0 +1,19 @@
+body {
+  background-color: bisque;
+  text-align: center;
+  font-size: 35px;
+}
+input{
+  padding: 5px;
+}
+h1{
+font-style: unset ;
+font-size: 58px;
+text-decoration:underline ;
+}
+#newEntry{
+  
+  border-width: 5px;
+  border-color: black;
+  padding:"15px"
+}
