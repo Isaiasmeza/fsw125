@@ -35,6 +35,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:6000/items"
+  "proxy": "http://localhost:6000"
 }
 

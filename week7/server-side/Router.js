@@ -11,7 +11,7 @@ const items =[
   {
     name : "Hoodie",
     type: "Clothing",
-    price: 54.00,
+    price: 54.99,
     _id: uuid()
   },
   {
@@ -29,7 +29,7 @@ const items =[
   {
     name : "laptop case",
     type: "luggage",
-    price: 14.00,
+    price: 14.99,
     _id: uuid()
   },
   {
@@ -40,7 +40,7 @@ const items =[
   }
 ]
 
-router.get("/", (req,res) => {
+router.get("/items", (req,res) => {
     res.status(201)
     res.send(items)
 })

@@ -26,7 +26,7 @@ class Form extends React.Component {
             cost: this.state.cost,
             type: this.state.type
         }
-        axios.post('/items', item)
+        axios.post("/items", item)
             .then(res => this.props.getItems())
             .catch(error => console.log(error))
     }
@@ -35,6 +35,7 @@ class Form extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
+                    <h1>Enter item in to your list</h1>
                     <label>Enter New Item</label><br />
                     <input
                         type="text"

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import Item from "./Item"
 import Form from "./Form"
 import axios from "axios"
+import "./App.css";
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
   const [filterItems, setFilterItems] = useState([])
 
   function getItems() {
-    axios.get("/items")
+    axios.get("items/items")
       .then(res => {
         setFilterItems(res.data)
         setItems(res.data)
@@ -33,7 +34,7 @@ function App() {
   function handlePricePut(event, param) {
     event.preventDefault()
     const id = event.target.parentNode.id
-    axios.put(`/${id}`, { price: param })
+    axios.put(`/items/items/${id}`, { price: param })
       .then(getItems)
       .catch(err => console.log(err))
   }
